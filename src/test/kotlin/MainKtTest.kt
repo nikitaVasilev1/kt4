@@ -20,7 +20,14 @@ class MainKtTest {
         val maestroMastercard2 = maestroMastercard(amount1,result1)
         assertEquals(result2,maestroMastercard2,0.0)
     }
-
+    @Test
+    fun maestroMastercardWithCommission76_000() {
+        val amount1 = 76_000.0
+        val result1 = 0.0
+        val result2 = amount1 * 0.06 + 20 + amount1
+        val maestroMastercard2 = maestroMastercard(amount1,result1)
+        assertEquals(result2,maestroMastercard2,0.0)
+    }
     @Test
     fun visaPlus35() {
         val amount1 = 10.0
